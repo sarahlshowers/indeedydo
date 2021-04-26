@@ -1,0 +1,63 @@
+// default font is Helvetica Neue
+// default font color is black (#2D2D2D) as defined in _colors.scss
+body {
+  font-family: Helvetica, sans-serif;
+  color: $black;
+}
+
+// Heading styles
+.heading2--gray {
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  font-size: 14px;
+  color: $gray-text;
+}
+
+.heading3 {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.heading3--white {
+  font-weight: 700;
+  font-size: 16px;
+  color: $white-text;
+}
+
+.heading4 {
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.heading6 {
+  font-family: 'Noto Sans';
+  font-weight: 700;
+  font-size: 28px;
+}
+
+// Text styles
+.text1--white {
+  font-weight: 400;
+  font-size: 12px;
+  color: $white-text;
+}
+
+.text2 {
+  font-family: 'Noto Sans';
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.text2--gray {
+  font-family: 'Noto Sans';
+  font-weight: 400;
+  font-size: 14px;
+  color: $gray-text;
+}
+
+.text3 {
+  font-family: 'Noto Sans';
+  font-weight: 400;
+  font-size: 16px;
+}

@@ -1,63 +1,93 @@
 // default font is Helvetica Neue
 // default font color is black (#2D2D2D) as defined in _colors.scss
-body {
-  font-family: Helvetica, sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+$HelveticaNeue: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$NotoSans: 'Noto Sans', sans-serif;
+
+@mixin heading-styles {
+  font-family: $NotoSans;
+  font-weight: 700;
+  color: $black;
+}
+
+@mixin text-styles {
+  font-family: $NotoSans;
+  font-weight: 400;
   color: $black;
 }
 
 // Heading styles
-.heading2--gray {
-  font-family: 'Noto Sans';
-  font-weight: 700;
+.heading2 {
+  @include heading-styles();
   font-size: 14px;
-  color: $gray-text;
+
+  &--gray {
+    @extend .heading2;
+    color: $gray-text;
+  }
+
+  &--white {
+    @extend .heading2;
+    color: $white-text;
+  }
 }
 
 .heading3 {
-  font-weight: 700;
+  @include heading-styles();
+  font-family: $HelveticaNeue;
   font-size: 16px;
-}
 
-.heading3--white {
-  font-weight: 700;
-  font-size: 16px;
-  color: $white-text;
+  &--gray {
+    @extend .heading3;
+    color: $gray-text;
+  }
+
+  &--white {
+    @extend .heading3;
+    color: $white-text;
+  }
 }
 
 .heading4 {
-  font-family: 'Noto Sans';
-  font-weight: 700;
+  @include heading-styles();
   font-size: 20px;
 }
 
 .heading6 {
-  font-family: 'Noto Sans';
-  font-weight: 700;
+  @include heading-styles();
   font-size: 28px;
 }
 
 // Text styles
-.text1--white {
-  font-weight: 400;
+.text1 {
+  @include text-styles();
+  font-family: $HelveticaNeue;
   font-size: 12px;
-  color: $white-text;
+
+  &--gray {
+    @extend .text1;
+    color: $gray-text;
+  }
+
+  &--white {
+    @extend .text1;
+    color: $white-text;
+  }
 }
 
 .text2 {
-  font-family: 'Noto Sans';
-  font-weight: 400;
+  @include text-styles();
   font-size: 14px;
-}
 
-.text2--gray {
-  font-family: 'Noto Sans';
-  font-weight: 400;
-  font-size: 14px;
-  color: $gray-text;
+  &--gray {
+    @extend .text1;
+    color: $gray-text;
+  }
 }
 
 .text3 {
-  font-family: 'Noto Sans';
-  font-weight: 400;
+  @include text-styles();
   font-size: 16px;
 }

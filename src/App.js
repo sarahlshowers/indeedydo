@@ -2,7 +2,11 @@ import './App.scss';
 
 function App() {
   return (
-    <h1>Indeedydo</h1>
+    <div>
+      <button class="primary-button">Primary</button>
+      <button class="secondary-button">Secondary</button>
+    </div>
+
   );
 }
 

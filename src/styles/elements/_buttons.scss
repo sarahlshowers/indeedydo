@@ -1,0 +1,27 @@
+@use 'global/colors';
+@use 'global/typography';
+
+@mixin button-styles {
+  @include heading-styles();
+
+  padding: 13px 16px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+}
+
+.primary-button {
+  @include button-styles();
+
+  background-color: $brand-blue;
+  color: $white;
+  border: none;
+}
+
+.secondary-button {
+  @include button-styles();
+
+  background-color: $white;
+  color: $brand-blue;
+  border: solid 1px $border-gray;
+}

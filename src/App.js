@@ -1,13 +1,17 @@
 import './App.scss';
+import React, { Component } from 'react';
+import PrimaryButton from './components/Buttons/PrimaryButton';
+import SecondaryButton from './components/Buttons/SecondaryButton';
 
-function App() {
-  return (
-    <div>
-      <button class="primary-button">Primary</button>
-      <button class="secondary-button">Secondary</button>
-    </div>
-
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <PrimaryButton />
+        <SecondaryButton />
+      </div>
+    )
+  }
 }
 
 export default App;

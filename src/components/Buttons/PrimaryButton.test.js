@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import { unmountComponentAtNode } from "react-dom";
+import { unmountComponentAtNode } from 'react-dom';
 import PrimaryButton from './PrimaryButton';
 
 let container = null;
 
 beforeEach(() => {
-  container = document.createElement("div");
+  container = document.createElement('div');
   document.body.appendChild(container);
 });
 
@@ -18,6 +18,6 @@ afterEach(() => {
 test('renders the primary call to action button', () => {
   render(<PrimaryButton />);
 
-  const buttonEl = screen.getByRole('button', {name: /Primary/i});
+  const buttonEl = screen.getByRole('button', { name: /Primary/i });
   expect(buttonEl).toBeInTheDocument();
 });

@@ -3,9 +3,11 @@ import LockUp from '../LockUps/LockUp';
 
 class NavBar extends Component {
   render() {
-    return  <nav className="nav-bar">
-              <LockUp />
-            </nav>
+    return (
+      <nav className="nav-bar">
+        <LockUp />
+      </nav>
+    );
   }
 }
 

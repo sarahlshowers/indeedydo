@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class SecondaryButton extends Component {
   render() {
-    return <button className="secondary-button">Secondary</button>
+    return <button className="secondary-button">Secondary</button>;
   }
 }
 

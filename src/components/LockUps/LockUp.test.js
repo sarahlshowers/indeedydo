@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import { unmountComponentAtNode } from "react-dom";
+import { unmountComponentAtNode } from 'react-dom';
 import LockUp from './LockUp';
 
 let container = null;
 
 beforeEach(() => {
-  container = document.createElement("div");
+  container = document.createElement('div');
   document.body.appendChild(container);
 });
 
@@ -15,7 +15,7 @@ afterEach(() => {
   container = null;
 });
 
-test('renders the user\'s profile information', () => {
+test("renders the user's profile information", () => {
   render(<LockUp />);
 
   const avatar = screen.getByRole('img');

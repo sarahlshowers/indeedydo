@@ -1,0 +1,8 @@
+@use 'global/colors';
+
+.avatar__standard {
+  border-radius: 50%;
+  background-color: $gray;
+  height: 36px;
+  width: 36px;
+}

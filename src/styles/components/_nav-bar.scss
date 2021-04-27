@@ -1,0 +1,14 @@
+
+@use 'global/colors';
+
+.nav-bar {
+  padding-left: 186px;
+  padding-right: 186px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  height: 64px;
+  background-color: $black;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

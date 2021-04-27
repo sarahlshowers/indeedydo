@@ -1,14 +1,12 @@
 import './App.scss';
 import React, { Component } from 'react';
-import PrimaryButton from './components/Buttons/PrimaryButton';
-import SecondaryButton from './components/Buttons/SecondaryButton';
+import NavBar from './components/Nav/NavBar';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <PrimaryButton />
-        <SecondaryButton />
+        <NavBar />
       </div>
     )
   }

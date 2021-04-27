@@ -1,6 +1,11 @@
+@import 'styles/global/_reset.scss';
 @import 'styles/global/_colors.scss';
 @import 'styles/global/_typography.scss';
 @import 'styles/global/_utilities.scss';
 
+@import 'styles/elements/_avatars.scss';
 @import 'styles/elements/_buttons.scss';
+@import 'styles/elements/_lockups.scss';
+
+@import 'styles/components/_nav-bar.scss'
 

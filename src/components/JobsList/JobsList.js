@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import SecondaryButton from '../Buttons/SecondaryButton';
-
-class HomePage extends Component {
+import JobsTableRow from '../JobsList/JobsTableRow';
+class JobsList extends Component {
   render() {
     return (
       <React.Fragment>
@@ -19,23 +18,10 @@ class HomePage extends Component {
           </div>
         </div>
 
-        <div className="jobs-list__table-row plr18">
-          <div className="jobs-list--wrapper text2">
-            <div className="jobs-list__column--title">
-              <p>Product Manager</p>
-              <p className="text2--gray">Austin, TX</p>
-            </div>
-            <div className="jobs-list__column--posted">10/04/2020</div>
-            <div className="jobs-list__column--sponsorship">Free</div>
-            <div className="jobs-list__column--status">Open</div>
-            <div className="jobs-list__column--edit">
-              <SecondaryButton />
-            </div>
-          </div>
-        </div>
+        <JobsTableRow />
       </React.Fragment>
     );
   }
 }
 
-export default HomePage;
+export default JobsList;

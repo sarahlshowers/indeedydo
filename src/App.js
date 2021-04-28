@@ -1,12 +1,12 @@
 import './App.scss';
 import React, { Component } from 'react';
-import NavBar from './components/Nav/NavBar';
+import HomePage from './components/routes/HomePage';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <HomePage />
       </div>
     );
   }

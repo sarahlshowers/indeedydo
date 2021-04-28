@@ -7,7 +7,7 @@ class LockUp extends Component {
       <div className="lockup">
         <AvatarSmall />
 
-        <div className="lockup__user-info">
+        <div className="pl8">
           <p className="heading3--white">User Name</p>
           <p className="text1--white">Job Title</p>
         </div>

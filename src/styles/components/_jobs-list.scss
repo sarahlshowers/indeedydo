@@ -1,0 +1,26 @@
+@use 'global/colors';
+
+.jobs-list--wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.jobs-list__table-row {
+  background-color: $white;
+  border: solid 1px $border-gray;
+  border-radius: 8px;
+  height: 80px;
+  display: flex;
+}
+
+.jobs-list__column--title {
+  min-width: 260px;
+}
+.jobs-list__column--posted {
+  width: 150px;
+}
+.jobs-list__column--sponsorship,
+.jobs-list__column--status,
+.jobs-list__column--edit {
+  width: 110px;
+}

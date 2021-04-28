@@ -1,0 +1,35 @@
+// Flex Box
+.u-flex {
+  display: flex;
+}
+
+.u-inline-flex {
+  display: inline-flex;
+}
+
+.u-justify-between {
+  justify-content: space-between;
+}
+
+.u-align-self-center {
+  align-self: center;
+}
+
+.u-block {
+  display: block;
+}
+
+// Padding
+.pl8 {
+  padding-left: 8px;
+}
+
+.plr18 {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.ptb8 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}

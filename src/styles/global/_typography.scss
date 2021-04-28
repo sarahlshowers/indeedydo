@@ -59,6 +59,7 @@ $NotoSans: 'Noto Sans', sans-serif;
 .heading6 {
   @include heading-styles();
   font-size: 28px;
+  line-height: 35px;
 }
 
 // Text styles
@@ -82,9 +83,10 @@ $NotoSans: 'Noto Sans', sans-serif;
 .text2 {
   @include text-styles();
   font-size: 14px;
+  line-height: 21px;
 
   &--gray {
-    @extend .text1;
+    @extend .text2;
     color: $gray-text;
   }
 }

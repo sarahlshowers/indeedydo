@@ -1,5 +1,10 @@
+body {
+  background-color: #e5e5e5;
+}
+
 @import 'styles/global/_reset.scss';
 @import 'styles/global/_colors.scss';
+@import 'styles/global/_grid.scss';
 @import 'styles/global/_typography.scss';
 @import 'styles/global/_utilities.scss';
 
@@ -7,4 +12,6 @@
 @import 'styles/elements/_buttons.scss';
 @import 'styles/elements/_lockups.scss';
 
+@import 'styles/components/_homepage.scss';
+@import 'styles/components/jobs-list.scss';
 @import 'styles/components/_nav-bar.scss';

@@ -1,0 +1,17 @@
+@use 'global/typography';
+
+.input__form-field,
+.dropdown__form-field {
+  height: 44px;
+  width: 228px;
+  border-radius: 8px;
+  border: solid 1px $border-gray;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-top: 4px;
+  margin-bottom: 32px;
+}
+
+.input__form-field::placeholder {
+  @extend .text3--gray;
+}

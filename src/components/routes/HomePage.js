@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from '../Nav/NavBar';
 import PrimaryButton from '../Buttons/PrimaryButton';
-import SecondaryButton from '../Buttons/SecondaryButton';
 import JobsList from '../JobsList/JobsList';
 
 class HomePage extends Component {

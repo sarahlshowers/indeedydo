@@ -1,0 +1,73 @@
+.jobs-form {
+  background-color: $white;
+  border: solid 1px $border-gray;
+  border-radius: 8px;
+  width: 780px;
+}
+
+.jobs-form__form-body {
+  border-top: solid 1px $border-gray;
+  border-bottom: solid 1px $border-gray;
+  padding: 32px 24px;
+}
+
+.jobs-form__header,
+.jobs-form__footer {
+  padding: 32px 24px;
+}
+
+.jobs-form {
+  // restricting scope of this reset to just the jobs form
+  select {
+    // A reset of styles, including removing the default dropdown arrow
+    appearance: none;
+    border: none;
+    cursor: inherit;
+    border-radius: 8px;
+    padding: 9px 11px;
+    width: 226px;
+    position: absolute;
+    left: -8px;
+  }
+
+  .select {
+    cursor: pointer;
+    display: grid;
+    grid-template-areas: 'select';
+    align-items: center;
+    position: relative;
+  }
+
+  .select::after {
+    content: '';
+    width: 12px;
+    height: 8px;
+    background-color: $black;
+    clip-path: polygon(100% 25%, 50% 88%, 0 25%, 0 0, 50% 65%, 100% 0);
+  }
+
+  select,
+  .select:after {
+    grid-area: select;
+  }
+
+  .dropdown__form-field:after {
+    justify-self: end;
+  }
+}
+
+.jobs-form__footer {
+  display: flex;
+  justify-items: flex-end;
+  justify-content: flex-end;
+}
+
+.jobs-form__footer {
+  .primary-button {
+    margin-left: 8px;
+  }
+
+  display: flex;
+  justify-items: flex-end;
+  justify-content: flex-end;
+}

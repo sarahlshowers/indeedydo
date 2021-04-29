@@ -22,6 +22,7 @@ $NotoSans: 'Noto Sans', sans-serif;
 .heading2 {
   @include heading-styles();
   font-size: 14px;
+  line-height: 21px;
 
   &--gray {
     @extend .heading2;
@@ -54,6 +55,7 @@ $NotoSans: 'Noto Sans', sans-serif;
 .heading4 {
   @include heading-styles();
   font-size: 20px;
+  line-height: 30px;
 }
 
 .heading6 {
@@ -94,4 +96,11 @@ $NotoSans: 'Noto Sans', sans-serif;
 .text3 {
   @include text-styles();
   font-size: 16px;
+  line-height: 24px;
+  font-family: $HelveticaNeue;
+
+  &--gray {
+    @extend .text3;
+    color: $gray-text;
+  }
 }

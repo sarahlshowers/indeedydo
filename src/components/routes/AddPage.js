@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavBar from '../Nav/NavBar';
 import Form from '../JobsForm/Form';
 
-class EditPage extends Component {
+class AddPage extends Component {
   render() {
     return (
       <React.Fragment>
@@ -10,8 +10,8 @@ class EditPage extends Component {
 
         <main className="grid-container edit-page">
           <Form
-            formHeadingTitle="Edit job"
-            formHeadingSubText="Edit the information for your new job listing."
+            formHeadingTitle="Add job"
+            formHeadingSubText="Add the information for your new job listing."
           />
         </main>
       </React.Fragment>
@@ -19,4 +19,4 @@ class EditPage extends Component {
   }
 }
 
-export default EditPage;
+export default AddPage;

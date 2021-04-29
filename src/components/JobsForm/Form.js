@@ -40,8 +40,8 @@ class Form extends Component {
       <React.Fragment>
         <form className="jobs-form grid-12">
           <div className="jobs-form__header">
-            <h1 className="heading4">Edit job</h1>
-            <p className="text3">Edit the information for your job listing.</p>
+            <h1 className="heading4">{this.props.formHeadingTitle}</h1>
+            <p className="text3">{this.props.formHeadingSubText}</p>
           </div>
           <div className="jobs-form__form-body">
             <Input

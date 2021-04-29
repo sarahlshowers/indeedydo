@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import NavBar from '../Nav/NavBar';
 import PrimaryButton from '../Buttons/PrimaryButton';
 import JobsList from '../JobsList/JobsList';
@@ -15,7 +16,9 @@ class HomePage extends Component {
               <h1 className="heading6">Jobs</h1>
               <p className="text2--gray u-align-self-center pl8">3 listings</p>
             </div>
-            <PrimaryButton className="baz"></PrimaryButton>
+            <Link to="/add">
+              <PrimaryButton />
+            </Link>
           </div>
 
           <section className="jobs-list__table grid-table">

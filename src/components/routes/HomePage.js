@@ -17,7 +17,7 @@ class HomePage extends Component {
               <p className="text2--gray u-align-self-center pl8">3 listings</p>
             </div>
             <Link to="/add">
-              <PrimaryButton />
+              <PrimaryButton buttonText="Add job" />
             </Link>
           </div>
 

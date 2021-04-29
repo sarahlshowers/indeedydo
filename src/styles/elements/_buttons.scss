@@ -8,6 +8,7 @@
   height: 44px;
   border-radius: 8px;
   display: flex;
+  cursor: pointer;
 }
 
 .primary-button {
@@ -24,4 +25,11 @@
   background-color: $white;
   color: $brand-blue;
   border: solid 1px $border-gray;
+}
+
+/* reset link styles
+we'd probably want to scope this reset since any link will be reset but we only have buttons with hrefs here
+*/
+a {
+  text-decoration: none;
 }

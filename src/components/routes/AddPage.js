@@ -12,6 +12,7 @@ class AddPage extends Component {
           <Form
             formHeadingTitle="Add job"
             formHeadingSubText="Add the information for your new job listing."
+            buttonText="Add job"
           />
         </main>
       </React.Fragment>

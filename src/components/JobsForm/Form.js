@@ -75,8 +75,8 @@ class Form extends Component {
             />
           </div>
           <div className="jobs-form__footer">
-            <SecondaryButton />
-            <PrimaryButton />
+            <SecondaryButton buttonText="Cancel" />
+            <PrimaryButton buttonText={this.props.buttonText} />
           </div>
         </form>
       </React.Fragment>

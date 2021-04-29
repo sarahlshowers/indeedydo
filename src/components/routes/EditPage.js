@@ -12,6 +12,7 @@ class EditPage extends Component {
           <Form
             formHeadingTitle="Edit job"
             formHeadingSubText="Edit the information for your new job listing."
+            buttonText="Save"
           />
         </main>
       </React.Fragment>

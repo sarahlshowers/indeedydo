@@ -17,7 +17,7 @@ class JobsTableRow extends Component {
             <div className="jobs-list__column--status">Open</div>
             <div className="jobs-list__column--edit">
               <Link to="/edit">
-                <SecondaryButton />
+                <SecondaryButton buttonText="Edit" />
               </Link>
             </div>
           </div>

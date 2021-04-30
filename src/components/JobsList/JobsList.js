@@ -1,5 +1,33 @@
 import React, { Component } from 'react';
 import JobsTableRow from '../JobsList/JobsTableRow';
+
+const jobs = [
+  {
+    id: 1,
+    title: 'Product Manager',
+    location: 'Austin, TX',
+    posted: '10/04/2020',
+    sponsored: 'Free',
+    status: 'Open',
+  },
+  {
+    id: 2,
+    title: 'CEO',
+    location: 'Austin, TX',
+    posted: '13/30/2020',
+    sponsored: 'Sponsored',
+    status: 'Paused',
+  },
+  {
+    id: 3,
+    title: 'Software Engineer',
+    location: 'Seattle, WA',
+    posted: '11/18/2020',
+    sponsored: 'Free',
+    status: 'Closed',
+  },
+];
+
 class JobsList extends Component {
   render() {
     return (
@@ -18,7 +46,7 @@ class JobsList extends Component {
           </div>
         </div>
 
-        <JobsTableRow />
+        <JobsTableRow jobs={jobs} />
       </React.Fragment>
     );
   }

@@ -1,9 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class PrimaryButton extends Component {
-  render() {
-    return <button className="primary-button">{this.props.buttonText}</button>;
+const PrimaryButton = (props) => {
+  function handleClick(e) {
+    if (props.onHandleClick) {
+      props.onHandleClick();
+    }
   }
-}
+
+  return (
+    <button className="primary-button" type={props.type} onClick={handleClick}>
+      {props.buttonText}
+    </button>
+  );
+};
 
 export default PrimaryButton;

@@ -11,6 +11,7 @@ class Input extends Component {
             className="text3--gray u-block "
             id={this.props.id}
             placeholder={this.props.placeholder}
+            onChange={this.props.onUpdateInput}
           >
             {this.props.menuOptions.map((item) => (
               <option key={item}>{item}</option>

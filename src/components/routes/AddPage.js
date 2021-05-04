@@ -1,23 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import NavBar from '../Nav/NavBar';
 import Form from '../JobsForm/Form';
 
-class AddPage extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <NavBar />
+const AddPage = (props) => {
+  return (
+    <React.Fragment>
+      <NavBar />
 
-        <main className="grid-container edit-page">
-          <Form
-            formHeadingTitle="Add job"
-            formHeadingSubText="Add the information for your new job listing."
-            buttonText="Add job"
-          />
-        </main>
-      </React.Fragment>
-    );
-  }
-}
+      <main className="grid-container edit-page">
+        <Form
+          formHeadingTitle="Add job"
+          formHeadingSubText="Add the information for your new job listing."
+          buttonText="Add job"
+          jobsList={props.jobsList}
+          onCreateJob={props.handleCreate}
+          onUpdateInput={props.handleInputChange}
+        />
+      </main>
+    </React.Fragment>
+  );
+};
 
 export default AddPage;

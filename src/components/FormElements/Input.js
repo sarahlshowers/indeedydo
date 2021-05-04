@@ -11,7 +11,11 @@ class Input extends Component {
           type={this.props.type}
           id={this.props.id}
           placeholder={this.props.placeholder}
+          onChange={this.props.onUpdateInput}
+          required
+          oninvalid={'This field cannot be left blank'}
         />
+        <span class="input__error" aria-live="polite"></span>
       </React.Fragment>
     );
   }

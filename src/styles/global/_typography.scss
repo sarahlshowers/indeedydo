@@ -104,3 +104,11 @@ $NotoSans: 'Noto Sans', sans-serif;
     color: $gray-text;
   }
 }
+
+.alert-text {
+  @include text-styles();
+  font-family: $HelveticaNeue;
+  font-size: 14px;
+  line-height: 21px;
+  color: $alert-red;
+}

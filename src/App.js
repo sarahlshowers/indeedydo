@@ -66,7 +66,7 @@ const App = () => {
     } else {
       addJob(job);
       setJob(initialFormState);
-      debugger;
+
       let path = '/';
       history.push(path);
     }

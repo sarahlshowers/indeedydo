@@ -2,8 +2,8 @@ import React from 'react';
 
 const PrimaryButton = (props) => {
   function handleClick(e) {
-    if (props.onHandleClick) {
-      props.onHandleClick();
+    if (props.handleClick) {
+      props.handleClick(e);
     }
   }
 

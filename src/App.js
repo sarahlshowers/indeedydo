@@ -27,6 +27,7 @@ const App = () => {
     jobSponsorship: 'Free',
     jobStatus: 'Open',
   };
+
   const [job, setJob] = useState(initialFormState);
 
   const handleInputChange = (e) => {
@@ -38,6 +39,7 @@ const App = () => {
 
       if (formField.validity.valid) {
         setJob({ ...job, [id]: value });
+
         errorMessage.textContent = '';
         errorMessage.hasClass = 'input__error';
         formField.className = 'input__form-field';
@@ -57,7 +59,6 @@ const App = () => {
   };
 
   const handleCreate = (e) => {
-    debugger;
     const jobTitleField = document.getElementById('jobTitle');
     const jobLocationField = document.getElementById('jobLocation');
 
@@ -72,21 +73,58 @@ const App = () => {
     }
   };
 
+  let currentJobData = {};
+
+  const editJob = (e) => {
+    e.preventDefault();
+    const buttonEl = e.target;
+    const buttonRowId = buttonEl.closest('.jobs-list__table-row').id;
+    // eslint-disable-next-line eqeqeq
+    currentJobData = jobsList.find((job) => job.id == buttonRowId);
+    setJob(currentJobData);
+    let path = '/edit';
+    history.push(path);
+  };
+
+  const saveJob = (e) => {
+    e.preventDefault();
+
+    const formId = e.target.form.id;
+    debugger;
+    // eslint-disable-next-line eqeqeq
+    setJobs(jobsList.map((item) => (item.id == formId ? job : item)));
+    let path = '/';
+    history.push(path);
+  };
+
   return (
     <div>
       <Switch>
-        <Route exact path="/" render={() => <HomePage jobsList={jobsList} />} />
+        <Route
+          exact
+          path="/"
+          render={() => <HomePage jobsList={jobsList} editJob={editJob} />}
+        />
         <Route
           path="/add"
           render={() => (
             <AddPage
-              jobsList={jobsData}
               handleCreate={handleCreate}
               handleInputChange={handleInputChange}
+              job={job}
             />
           )}
         />
-        <Route path="/edit" component={EditPage} />
+        <Route
+          path="/edit"
+          render={() => (
+            <EditPage
+              handleInputChange={handleInputChange}
+              saveJob={saveJob}
+              job={job}
+            />
+          )}
+        />
       </Switch>
     </div>
   );

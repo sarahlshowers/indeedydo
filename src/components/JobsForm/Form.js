@@ -36,9 +36,15 @@ const jobStatus = {
 };
 
 const Form = (props) => {
+  let initializeForm = {};
+
+  props.currentJob
+    ? (initializeForm = props.currentJob)
+    : (initializeForm = props.job);
+
   return (
     <React.Fragment>
-      <form className="jobs-form grid-12" novalidate>
+      <form className="jobs-form grid-12" id={initializeForm.id} noValidate>
         <div className="jobs-form__header">
           <h1 className="heading4">{props.formHeadingTitle}</h1>
           <p className="text3">{props.formHeadingSubText}</p>
@@ -51,6 +57,7 @@ const Form = (props) => {
             id={jobTitle.id}
             placeholder={jobTitle.placeholder}
             onUpdateInput={props.onUpdateInput}
+            value={initializeForm.jobTitle}
           />
 
           <Input
@@ -60,6 +67,7 @@ const Form = (props) => {
             id={jobLocation.id}
             placeholder={jobLocation.placeholder}
             onUpdateInput={props.onUpdateInput}
+            value={initializeForm.jobLocation}
           />
 
           <Dropdown
@@ -68,6 +76,7 @@ const Form = (props) => {
             id={jobSponsorship.id}
             menuOptions={jobSponsorship.menuOptions}
             onUpdateInput={props.onUpdateInput}
+            value={initializeForm.jobSponsorship}
           />
 
           <Dropdown
@@ -76,6 +85,7 @@ const Form = (props) => {
             id={jobStatus.id}
             menuOptions={jobStatus.menuOptions}
             onUpdateInput={props.onUpdateInput}
+            value={initializeForm.jobStatus}
           />
         </div>
         <div className="jobs-form__footer">
@@ -84,7 +94,7 @@ const Form = (props) => {
           </Link>
           <PrimaryButton
             buttonText={props.buttonText}
-            onHandleClick={props.onCreateJob}
+            handleClick={props.handleClick}
           />
         </div>
       </form>

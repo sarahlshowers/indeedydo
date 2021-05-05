@@ -1,24 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Input extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <label className="heading3 u-block">{this.props.label}</label>
-        <span className="text2--gray u-block">{this.props.subtext}</span>
-        <input
-          className="input__form-field u-block"
-          type={this.props.type}
-          id={this.props.id}
-          placeholder={this.props.placeholder}
-          onChange={this.props.onUpdateInput}
-          required
-          oninvalid={'This field cannot be left blank'}
-        />
-        <span class="input__error" aria-live="polite"></span>
-      </React.Fragment>
-    );
-  }
-}
+const Input = (props) => {
+  return (
+    <React.Fragment>
+      <label className="heading3 u-block">{props.label}</label>
+      <span className="text2--gray u-block">{props.subtext}</span>
+      <input
+        className="input__form-field u-block"
+        type={props.type}
+        id={props.id}
+        placeholder={props.placeholder}
+        value={props.value}
+        onChange={props.onUpdateInput}
+        required
+        oninvalid={'This field cannot be left blank'}
+      />
+      <span className="input__error" aria-live="polite"></span>
+    </React.Fragment>
+  );
+};
 
 export default Input;

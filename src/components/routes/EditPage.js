@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from '../Nav/NavBar';
 import Form from '../JobsForm/Form';
 
-const EditPage = () => {
+const EditPage = (props) => {
   return (
     <React.Fragment>
       <NavBar />
@@ -12,6 +12,9 @@ const EditPage = () => {
           formHeadingTitle="Edit job"
           formHeadingSubText="Edit the information for your new job listing."
           buttonText="Save"
+          handleClick={props.saveJob}
+          onUpdateInput={props.handleInputChange}
+          currentJob={props.job}
         />
       </main>
     </React.Fragment>

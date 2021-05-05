@@ -24,7 +24,7 @@ const HomePage = (props) => {
 
         <section className="jobs-list__table grid-table">
           {props.jobsList.length > 0 ? (
-            <JobsList jobsList={props.jobsList} />
+            <JobsList jobsList={props.jobsList} editJob={props.editJob} />
           ) : (
             <p>Womp womp, no jobs in the list!</p>
           )}

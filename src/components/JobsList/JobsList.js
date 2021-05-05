@@ -18,7 +18,7 @@ const JobsList = (props) => {
         </div>
       </div>
 
-      <JobsTableRow jobsList={props.jobsList} />
+      <JobsTableRow jobsList={props.jobsList} editJob={props.editJob} />
     </React.Fragment>
   );
 };

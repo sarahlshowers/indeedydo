@@ -1,12 +1,11 @@
 import React from 'react';
 import SecondaryButton from '../Buttons/SecondaryButton';
-import { Link } from 'react-router-dom';
 
 const JobsTableRow = (props) => {
   return (
     <React.Fragment>
       {props.jobsList.map((job) => (
-        <div className="jobs-list__table-row plr18">
+        <div className="jobs-list__table-row plr18" id={job.id}>
           <div className="jobs-list--wrapper text2">
             <div className="jobs-list__column--title">
               <p>{job.jobTitle}</p>
@@ -18,9 +17,7 @@ const JobsTableRow = (props) => {
             </div>
             <div className="jobs-list__column--status">{job.jobStatus}</div>
             <div className="jobs-list__column--edit">
-              <Link to="/edit">
-                <SecondaryButton buttonText="Edit" />
-              </Link>
+              <SecondaryButton buttonText="Edit" handleClick={props.editJob} />
             </div>
           </div>
         </div>

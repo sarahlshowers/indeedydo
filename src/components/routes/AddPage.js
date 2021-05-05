@@ -12,9 +12,9 @@ const AddPage = (props) => {
           formHeadingTitle="Add job"
           formHeadingSubText="Add the information for your new job listing."
           buttonText="Add job"
-          jobsList={props.jobsList}
-          onCreateJob={props.handleCreate}
+          handleClick={props.handleCreate}
           onUpdateInput={props.handleInputChange}
+          job={props.job}
         />
       </main>
     </React.Fragment>

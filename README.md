@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Indeedydo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This was the first time I worked with React for a couple of years and even that was a workshop and a dev conference. This was really my first foray into building something, unguided from end to end.
 
-## Available Scripts
+## Setup
 
-In the project directory, you can run:
+If you want to get things running locally, follow these steps.
 
-### `yarn start`
+1. Checkout this repo.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`git clone https://github.com/sarahlshowers/indeedydo.git`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. Run the server.
 
-### `yarn test`
+`yarn start`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Navigate to [http://localhost:3000](http://localhost:3000)
 
-### `yarn build`
+## Design and Implementation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### UI
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I knew I wanted to use sass for authoring my styles, I find using variables and mixins really useful. You can see in `styles/global/colors` I defined a color palette based on the mocks. I was able to quickly reuse the more meaningfully named variables, rather than looking up hex values.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+For typography, I took a similar approach. I created my base styles and extended them, it helped with consistency, reducing duplicate lines of CSS and having named the mixins based on the names in the mocks, I could quickly code out the styles needed. I envision a much more expanded typography library in a larger application to aid in consistency - I've definitely run into varying shades of gray when each developer is left to implement styles without mocks and a pre-defined library to use in styling their applications.
 
-### `yarn eject`
+You notice there is a slim utilities file, I only really added what I'd use. I think one of the reasons some devs are resistant to BEM is that it makes for pretty ugly looking markup. I've been using it for almost 5 years now so I'm used to the long class names but when you start adding lots of utility classes it can get really out of control. If you're already defining styles for an element, I'd add things like flex properties to the CSS class definition but in the event I only need to seta single prop, I think that's when I'd lean towards a single well defined utility class.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+When I started building out elements, I tried to look at the most atomic things I could and use those to compose the layout. In the case of the `LockUp` component, you will see that it extends on the `Avatar` component. I tried to keep things generic, such that buttons knew nothing of state, simply that there is a function that can be utilized by the author to fit their use case.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Data
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+I spent a lot of time here trying to figure out how to manage state between the various components and routes. My initial build out of the UI was using hard coded data, but once the first major pass at layout was done, I started working on hoe I'd extract that data and emulate the CRU[D] functionality. Two things tripped me up, I was using strict equals (===) comparing id values and missed that I was comparing a string to an integer `1 === '1'`. Once I realized that, I was able to change that to allow javascript to coerce the values. The other thing, I missed was that form elements don't work the same as they do in vanilla JS, so I had to go figure out how to get around that, and so revisited state again to understand... that threw me through a loop.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I created a small helper for formatting that date. In a larger application this could be utilized for various other date formatting, while the helper isn't reused all that much here, I wanted to demonstrate a piece of code that would be a good candidate for a helper.
 
-## Learn More
+## If I had more time..
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+I had a lot of fun working on this and could have kept refactoring.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+A single button component that accepts arguments defining whether it's primary or secondary, possibly other arguments like size, disabled state.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Why, why, why does the nav break in iPhone views? So frustrating. Otherwise I was please that using CSS grid made everything pretty responsive with out too much effort.

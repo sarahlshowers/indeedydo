@@ -9,8 +9,8 @@ const HomePage = (props) => {
     <React.Fragment>
       <NavBar />
 
-      <main className="homepage grid-container">
-        <div className="u-flex u-justify-between">
+      <main className="home-page">
+        <div className="home-page__header-wrapper">
           <div className="u-inline-flex">
             <h1 className="heading6">Jobs</h1>
             <p className="text2--gray u-align-self-center pl8">

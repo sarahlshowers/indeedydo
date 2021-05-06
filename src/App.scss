@@ -4,7 +4,6 @@ body {
 
 @import 'styles/global/_reset.scss';
 @import 'styles/global/_colors.scss';
-@import 'styles/global/_grid.scss';
 @import 'styles/global/_typography.scss';
 @import 'styles/global/_utilities.scss';
 
@@ -14,7 +13,7 @@ body {
 @import 'styles/elements/_lockups.scss';
 
 @import 'styles/components/_edit-page.scss';
-@import 'styles/components/_homepage.scss';
+@import 'styles/components/_home-page.scss';
 @import 'styles/components/_jobs-form';
 @import 'styles/components/_jobs-list.scss';
 @import 'styles/components/_nav-bar.scss';

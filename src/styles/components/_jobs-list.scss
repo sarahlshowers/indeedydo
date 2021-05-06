@@ -1,27 +1,22 @@
-@use 'global/colors';
+.jobs-list__table {
+  width: 750px;
+  margin: 0 auto;
+}
 
-.jobs-list--wrapper {
-  display: flex;
+.jobs-list__table-row {
+  border: solid 1px $border-gray;
+  border-radius: 8px;
+  height: 80px;
+  margin-bottom: 18px;
+}
+
+.jobs-list__table-row,
+.jobs-list__header-row {
+  display: grid;
+  grid-template-columns: 200px repeat(4, 1fr);
   align-items: center;
 }
 
 .jobs-list__table-row {
   background-color: $white;
-  border: solid 1px $border-gray;
-  border-radius: 8px;
-  height: 80px;
-  display: flex;
-  margin-bottom: 18px;
-}
-
-.jobs-list__column--title {
-  min-width: 260px;
-}
-.jobs-list__column--posted {
-  width: 150px;
-}
-.jobs-list__column--sponsorship,
-.jobs-list__column--status,
-.jobs-list__column--edit {
-  width: 110px;
 }

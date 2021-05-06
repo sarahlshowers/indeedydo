@@ -44,7 +44,7 @@ const Form = (props) => {
 
   return (
     <React.Fragment>
-      <form className="jobs-form grid-12" id={initializeForm.id} noValidate>
+      <form className="jobs-form grid-12" id={initializeForm.id}>
         <div className="jobs-form__header">
           <h1 className="heading4">{props.formHeadingTitle}</h1>
           <p className="text3">{props.formHeadingSubText}</p>

@@ -13,7 +13,6 @@ const Input = (props) => {
         value={props.value}
         onChange={props.onUpdateInput}
         required
-        oninvalid={'This field cannot be left blank'}
       />
       <span className="input__error" aria-live="polite"></span>
     </React.Fragment>

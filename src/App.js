@@ -44,24 +44,28 @@ const App = () => {
         errorMessage.hasClass = 'input__error';
         formField.className = 'input__form-field';
       } else {
-        showError(formField, errorMessage);
+        debugger;
+        showError(formField, errorMessage, id);
       }
     }
   };
 
-  const showError = (formField, errorMessage) => {
+  const showError = (formField, errorMessage, id) => {
+    debugger;
     if (formField.validity.valueMissing) {
       errorMessage.textContent =
         'Error: An error has occurred due to missing required information.';
       errorMessage.className = 'input__error input__error--message';
       formField.className = 'input__form-field input__form-field--hasError';
     }
+
+    setJob({ ...job, [id]: '' });
   };
 
   const handleCreate = (e) => {
     const jobTitleField = document.getElementById('jobTitle');
     const jobLocationField = document.getElementById('jobLocation');
-
+    debugger;
     if (!jobTitleField.validity.valid || !jobLocationField.validity.valid) {
       e.preventDefault();
     } else {
@@ -82,6 +86,7 @@ const App = () => {
     // eslint-disable-next-line eqeqeq
     currentJobData = jobsList.find((job) => job.id == buttonRowId);
     setJob(currentJobData);
+
     let path = '/edit';
     history.push(path);
   };
@@ -93,12 +98,13 @@ const App = () => {
     debugger;
     // eslint-disable-next-line eqeqeq
     setJobs(jobsList.map((item) => (item.id == formId ? job : item)));
+    setJob(initialFormState);
     let path = '/';
     history.push(path);
   };
 
   return (
-    <div>
+    <div className="app-wrapper">
       <Switch>
         <Route
           exact

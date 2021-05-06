@@ -1,33 +1,28 @@
-/* If there are other styles being defined on an element, I'd prefer to see styling built into the larger component styles to keep the markup cleaner
-However, if you are only setting typography and one or two display settings, I think using utility classes like the ones defines below is a useful pattern
-*/
-
-// Flex Box
-.u-flex {
-  display: flex;
-}
+// /* If there are other styles being defined on an element, I'd prefer to see styling built into the larger component styles to keep the markup cleaner
+// However, if you are only setting typography and one or two display settings, I think using utility classes like the ones defines below is a useful pattern
+// */
 
 .u-inline-flex {
   display: inline-flex;
-}
-
-.u-justify-between {
-  justify-content: space-between;
 }
 
 .u-align-self-center {
   align-self: center;
 }
 
+.u-justify-self-center {
+  justify-self: center;
+}
+
 .u-block {
   display: block;
 }
 
-/* If this were a larger application, I'd like to use some uniform spacing pattern header to try and prevent pixel pushing
-I envision there would be standard horizontal spacing, margins and padding.
-*/
+// /* If this were a larger application, I'd like to use some uniform spacing pattern header to try and prevent pixel pushing
+// I envision there would be standard horizontal spacing, margins and padding.
+// */
 
-// Padding
+// // Padding
 .pl8 {
   padding-left: 8px;
 }

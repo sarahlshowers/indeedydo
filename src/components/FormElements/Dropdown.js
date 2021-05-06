@@ -1,26 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Input extends Component {
-  render() {
-    return (
-      <React.Fragment>
-        <label className="heading3 u-block">{this.props.label}</label>
-        <span className="text2--gray u-block">{this.props.subtext}</span>
-        <div className="select dropdown__form-field">
-          <select
-            className="text3--gray u-block "
-            id={this.props.id}
-            placeholder={this.props.placeholder}
-            onChange={this.props.onUpdateInput}
-          >
-            {this.props.menuOptions.map((item) => (
-              <option key={item}>{item}</option>
-            ))}
-          </select>
-        </div>
-      </React.Fragment>
-    );
-  }
-}
+const Dropdown = (props) => {
+  return (
+    <React.Fragment>
+      <label className="heading3 u-block">{props.label}</label>
+      <span className="text2--gray u-block">{props.subtext}</span>
+      <div className="select dropdown__form-field">
+        <select
+          className="text3--gray u-block "
+          id={props.id}
+          placeholder={props.placeholder}
+          onChange={props.onUpdateInput}
+          value={props.value}
+        >
+          {props.menuOptions.map((item) => (
+            <option key={item}>{item}</option>
+          ))}
+        </select>
+      </div>
+    </React.Fragment>
+  );
+};
 
-export default Input;
+export default Dropdown;

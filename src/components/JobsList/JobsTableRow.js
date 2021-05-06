@@ -5,7 +5,11 @@ const JobsTableRow = (props) => {
   return (
     <React.Fragment>
       {props.jobsList.map((job) => (
-        <div className="jobs-list__table-row plr18 text2" id={job.id}>
+        <div
+          className="jobs-list__table-row plr18 text2"
+          id={job.id}
+          key={job.id}
+        >
           <div className="">
             <p>{job.jobTitle}</p>
             <p className="text2--gray">{job.jobLocation}</p>

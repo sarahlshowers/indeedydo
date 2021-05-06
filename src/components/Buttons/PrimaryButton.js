@@ -8,7 +8,12 @@ const PrimaryButton = (props) => {
   }
 
   return (
-    <button className="primary-button" type={props.type} onClick={handleClick}>
+    <button
+      data-testid="primaryButton"
+      className="primary-button"
+      type={props.type}
+      onClick={handleClick}
+    >
       {props.buttonText}
     </button>
   );

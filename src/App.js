@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import HomePage from './components/routes/HomePage';
 import EditPage from './components/routes/EditPage';
 import AddPage from './components/routes/AddPage';
-import { Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import jobsData from './jobsData.js';
 import { useHistory } from 'react-router-dom';
 import { getCurrentDate } from './helpers/DateFormatters';
@@ -12,12 +12,6 @@ const App = () => {
   const history = useHistory();
 
   const [jobsList, setJobs] = useState(jobsData);
-
-  const addJob = (job) => {
-    job.id = jobsData.length + 1;
-    job.jobPosted = getCurrentDate();
-    setJobs([...jobsList, job]);
-  };
 
   const initialFormState = {
     id: null,
@@ -29,6 +23,14 @@ const App = () => {
   };
 
   const [job, setJob] = useState(initialFormState);
+
+  let currentJobData = {};
+
+  const addJob = (job) => {
+    job.id = jobsData.length + 1;
+    job.jobPosted = getCurrentDate();
+    setJobs([...jobsList, job]);
+  };
 
   const handleInputChange = (e) => {
     const { id, value } = e.target;
@@ -77,8 +79,6 @@ const App = () => {
     }
   };
 
-  let currentJobData = {};
-
   const editJob = (e) => {
     e.preventDefault();
     const buttonEl = e.target;
@@ -105,33 +105,35 @@ const App = () => {
 
   return (
     <div className="app-wrapper">
-      <Switch>
-        <Route
-          exact
-          path="/"
-          render={() => <HomePage jobsList={jobsList} editJob={editJob} />}
-        />
-        <Route
-          path="/add"
-          render={() => (
-            <AddPage
-              handleCreate={handleCreate}
-              handleInputChange={handleInputChange}
-              job={job}
-            />
-          )}
-        />
-        <Route
-          path="/edit"
-          render={() => (
-            <EditPage
-              handleInputChange={handleInputChange}
-              saveJob={saveJob}
-              job={job}
-            />
-          )}
-        />
-      </Switch>
+      <BrowserRouter>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => <HomePage jobsList={jobsList} editJob={editJob} />}
+          />
+          <Route
+            path="/add"
+            render={() => (
+              <AddPage
+                handleCreate={handleCreate}
+                handleInputChange={handleInputChange}
+                job={job}
+              />
+            )}
+          />
+          <Route
+            path="/edit"
+            render={() => (
+              <EditPage
+                handleInputChange={handleInputChange}
+                saveJob={saveJob}
+                job={job}
+              />
+            )}
+          />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 };

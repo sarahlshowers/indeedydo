@@ -1,12 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { unmountComponentAtNode } from 'react-dom';
 import PrimaryButton from './PrimaryButton';
-import { shallow } from 'enzyme';
 
 let container = null;
 
 beforeEach(() => {
-  container = document.createElement('button');
+  container = document.createElement('div');
   document.body.appendChild(container);
 });
 
@@ -16,19 +15,31 @@ afterEach(() => {
   container = null;
 });
 
+const defaultProps = {
+  handleClick: jest.fn(),
+  text: 'Submit',
+};
+
 test('renders the primary call to action button', () => {
   render(<PrimaryButton />);
 
-  const buttonEl = screen.getByRole('button', { name: /Primary/i });
+  const buttonEl = screen.getByTestId('primaryButton');
   expect(buttonEl).toBeInTheDocument();
 });
 
-test('click event fires `handleClick` function', () => {
-  const mockCallBack = jest.fn();
+test('button renders with correct text', () => {
+  render(<PrimaryButton {...defaultProps} />);
 
-  const button = shallow(
-    <PrimaryButton onClick={mockCallBack}>Ok!</PrimaryButton>
-  );
-  button.find('button').simulate('click');
-  expect(mockCallBack.mock.calls.length).toEqual(1);
+  const userRole = screen.getByText('Submit');
+  expect(userRole).toBeInTheDocument();
+
+  const buttonEl = screen.getByTestId('primaryButton');
+  expect(buttonEl).toHaveTextContent('Submit');
+});
+
+test('button call handleClick function onClick', () => {
+  render(<PrimaryButton {...defaultProps} />);
+
+  fireEvent.click(screen.getByTestId);
+  expect(defaultProps.handleClick).toHaveBeenCalledTimes(1);
 });

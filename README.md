@@ -41,3 +41,5 @@ I had a lot of fun working on this and could have kept refactoring.
 A single button component that accepts arguments defining whether it's primary or secondary, possibly other arguments like size, disabled state.
 
 Why, why, why does the nav break in iPhone views? So frustrating. Otherwise I was please that using CSS grid made everything pretty responsive with out too much effort.
+
+I couldn't wrap my head around testing. I'm going to keep playing with this though because it's frustrating me. I have pseudo coded all of my test scenarios so once the light bulb clicks, the unit tests should be fairly quick to write however the state tests may be more challenging to mock and manipulate.
